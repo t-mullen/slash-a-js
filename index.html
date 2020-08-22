@@ -1,0 +1,36 @@
+<html>
+  <body></body>
+  <script>
+    function vectorToArray (vec) {
+      const arr = new Array(vec.size())
+      for (let i = 0; i < arr.length; ++i) {
+        arr[i] = vec.get(i)
+      }
+      return arr
+    }
+    var SlashA = {
+      onRuntimeInitialized: function () {
+        const sourceCode = `
+          input/0/save/input/add/output/.
+        `
+        const byteCode = SlashA.source2ByteCode(sourceCode)
+
+        const input = new SlashA.VectorDouble()
+        input.push_back(10.5)
+        input.push_back(20)
+
+        const D_SIZE = 10
+        const L_SIZE = 10
+        const RAND_SEED = 9999
+        const MAX_RTIME = 0
+        const MAX_LOOP_DEPTH = -1
+
+        const output = SlashA.runByteCode(
+          byteCode, input ,D_SIZE, L_SIZE, RAND_SEED, MAX_RTIME, MAX_LOOP_DEPTH)
+        const failed = SlashA.checkFailed()
+        console.log(vectorToArray(output), failed)
+      }
+    }
+  </script>
+  <script src="./build/out.js"></script>
+</html>
