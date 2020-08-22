@@ -59,6 +59,6 @@ bytecode.push_back(1)
           const bytecode = new SlashA.ByteCode()
       }
     }
-<script>
-<script src="build/slash-a.js">
+</script>
+<script src="build/slash-a.js"></script>
 ```
