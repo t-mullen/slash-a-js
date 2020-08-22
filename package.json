@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Javascript bindings for the Slash/A interpreter.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "author": "Thomas Mullen",
+  "license": "GPL-v3"
 }

@@ -61,5 +61,5 @@ EMSCRIPTEN_BINDINGS(module) {
 
 EMSCRIPTEN_BINDINGS(stl_wrappers) {
     register_vector<double>("VectorDouble");
-    register_vector<unsigned>("VectorUnsigned");
+    register_vector<unsigned>("ByteCode");
 }

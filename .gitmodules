@@ -1,0 +1,3 @@
+[submodule "lib/slash-a"]
+	path = lib/slash-a
+	url = https://github.com/arturadib/slash-a.git
