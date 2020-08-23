@@ -48,6 +48,17 @@ source2ByteCode(std::string src) {
     return bc;
 }
 
+std::string
+byteCode2Source(SlashA::ByteCode bc) {
+    if (!DIS_inserted) {
+        iset.insert_DIS_full();
+        DIS_inserted = true;
+    }
+    std::string src;
+    SlashA::bytecode2Source(bc, src, iset);
+    return src;
+}
+
 bool
 checkFailed() {
     return lastFailed;
@@ -56,6 +67,7 @@ checkFailed() {
 EMSCRIPTEN_BINDINGS(module) {
     function("runByteCode", &runByteCode);
     function("source2ByteCode", &source2ByteCode);
+    function("byteCode2Source", &byteCode2Source);
     function("checkFailed", &checkFailed);
 }
 
